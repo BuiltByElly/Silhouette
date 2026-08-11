@@ -12,7 +12,7 @@ import { join } from "node:path"
 //Root directory in home
 export const SILHOUETTE_DIR = join(homedir(), ".silhouette")
 
-// bin dir that will house the binaries of `packages/stethoscope` as a silhouette command
+// bin dir that will house the binaries of `packages/stethoscope` as a `silhouette` command
 export const BIN_DIR = join(SILHOUETTE_DIR, 'bin')
 
 export const LOG_PATH = join(SILHOUETTE_DIR, 'silhouette.log')
