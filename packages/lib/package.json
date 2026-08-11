@@ -1,0 +1,19 @@
+{
+  "name": "lib",
+  "module": "src/main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run src/main.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/ini": "^4.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "ini": "^7.0.0"
+  }
+}

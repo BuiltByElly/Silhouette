@@ -1,0 +1,8 @@
+{
+  "name": "silhouette",
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*",
+    "!packages/**/tests/**"
+  ]
+}
