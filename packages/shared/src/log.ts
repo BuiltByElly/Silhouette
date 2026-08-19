@@ -1,7 +1,7 @@
 // packages/lib/src/log.ts
 import * as fs from 'node:fs';
-import * as path from 'node:path';
 import { LOG_PATH } from './path';
+import type { LogState, PkgName } from './types/log.types';
 
 //EXAMPLE: [Error](Stethoscope): Failed to get config...
 // FORMAT: [State](Package): logging message
@@ -10,7 +10,7 @@ import { LOG_PATH } from './path';
 
 const debug = false; // Set to false to test the file-writing logic
 
-export function logger(type: string, pkgName: string, message: string) {
+export function logger(type: LogState, pkgName: PkgName, message: string) {
     if (debug) {
         console.log(`[${type}](${pkgName}): ${message}`);
     } else {
