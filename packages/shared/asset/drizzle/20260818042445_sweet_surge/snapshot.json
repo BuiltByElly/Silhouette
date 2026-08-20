@@ -2,9 +2,7 @@
   "version": "7",
   "dialect": "sqlite",
   "id": "b25b3506-9c0d-4873-9b0d-d4fcc1f81cbc",
-  "prevIds": [
-    "00000000-0000-0000-0000-000000000000"
-  ],
+  "prevIds": ["00000000-0000-0000-0000-000000000000"],
   "ddl": [
     {
       "name": "heartbeats",
@@ -131,9 +129,7 @@
       "table": "heartbeats"
     },
     {
-      "columns": [
-        "id"
-      ],
+      "columns": ["id"],
       "nameExplicit": false,
       "name": "heartbeats_pk",
       "table": "heartbeats",

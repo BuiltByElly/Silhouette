@@ -1,6 +1,6 @@
-import { mkdir } from "node:fs/promises"
-import { homedir } from "node:os"
-import { join } from "node:path"
+import { mkdir } from "node:fs/promises";
+import { homedir } from "node:os";
+import { join } from "node:path";
 
 /*
   Generating path constants for silhouette home dir.
@@ -10,22 +10,22 @@ import { join } from "node:path"
 */
 
 //Root directory in home
-export const SILHOUETTE_DIR = join(homedir(), ".silhouette")
+export const SILHOUETTE_DIR = join(homedir(), ".silhouette");
 
-export const MIGRATIONS_DIR = join(import.meta.dir,"../asset/drizzle")
+export const MIGRATIONS_DIR = join(import.meta.dir, "../asset/drizzle");
 
 // bin dir that will house the binaries of `packages/stethoscope` as a `silhouette` command
-export const BIN_DIR = join(SILHOUETTE_DIR, 'bin')
+export const BIN_DIR = join(SILHOUETTE_DIR, "bin");
 
-export const LOG_PATH = join(SILHOUETTE_DIR, 'silhouette.log')
+export const LOG_PATH = join(SILHOUETTE_DIR, "silhouette.log");
 
-export const CONFIG_PATH = join(SILHOUETTE_DIR, 'silhouette.ini')
+export const CONFIG_PATH = join(SILHOUETTE_DIR, "silhouette.ini");
 
-export const DB_PATH = join(SILHOUETTE_DIR, 'silhouette.db')
+export const DB_PATH = join(SILHOUETTE_DIR, "silhouette.db");
 
-export const PID_PATH = join(SILHOUETTE_DIR,'silhouette.pid')
+export const PID_PATH = join(SILHOUETTE_DIR, "silhouette.pid");
 
 //function to create the home directory
 export async function createSilhouetteHomeDir() {
-  await mkdir(BIN_DIR, { recursive: true })
+  await mkdir(BIN_DIR, { recursive: true });
 }

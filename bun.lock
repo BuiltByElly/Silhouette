@@ -4,9 +4,12 @@
   "workspaces": {
     "": {
       "name": "silhouette",
+      "devDependencies": {
+        "prettier": "^3.9.6",
+      },
     },
-    "packages/lib": {
-      "name": "lib",
+    "packages/shared": {
+      "name": "shared",
       "dependencies": {
         "drizzle-orm": "^1.0.0-rc.4",
         "ini": "^7.0.0",
@@ -23,7 +26,7 @@
     "packages/stethoscope": {
       "name": "stethoscope",
       "dependencies": {
-        "lib": "workspace:*",
+        "shared": "workspace:*",
       },
       "devDependencies": {
         "@types/bun": "latest",
@@ -112,9 +115,11 @@
 
     "jsbi": ["jsbi@4.3.2", "", {}, "sha512-9fqMSQbhJykSeii05nxKl4m6Eqn2P6rOlYiS+C5Dr/HPIU/7yZxu5qzbs40tgaFORiw2Amd0mirjxatXYMkIew=="],
 
-    "lib": ["lib@workspace:packages/lib"],
+    "prettier": ["prettier@3.9.6", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g=="],
 
     "resolve-pkg-maps": ["resolve-pkg-maps@1.0.0", "", {}, "sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw=="],
+
+    "shared": ["shared@workspace:packages/shared"],
 
     "stethoscope": ["stethoscope@workspace:packages/stethoscope"],
 

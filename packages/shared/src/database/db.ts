@@ -11,10 +11,14 @@ export function setupDatabase() {
 
   //Automatically run schema migrations on application boot
   try {
-    migrate(db, { migrationsFolder:MIGRATIONS_DIR });
-    logger('SUCCESS','Lib',`Successfully migrated and connected at: ${DB_PATH}`);
+    migrate(db, { migrationsFolder: MIGRATIONS_DIR });
+    logger(
+      "SUCCESS",
+      "Lib",
+      `Successfully migrated and connected at: ${DB_PATH}`,
+    );
   } catch (error) {
-    logger('ERROR','Lib',`Auto-migration failed at startup ${error}`);
+    logger("ERROR", "Lib", `Auto-migration failed at startup ${error}`);
   }
 
   return db;
