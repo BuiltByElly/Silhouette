@@ -1,8 +1,10 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "id": "b25b3506-9c0d-4873-9b0d-d4fcc1f81cbc",
-  "prevIds": ["00000000-0000-0000-0000-000000000000"],
+  "id": "67fc6cff-0e13-40c7-a0a3-b8c14b719cc7",
+  "prevIds": [
+    "00000000-0000-0000-0000-000000000000"
+  ],
   "ddl": [
     {
       "name": "heartbeats",
@@ -34,7 +36,7 @@
       "autoincrement": false,
       "default": null,
       "generated": null,
-      "name": "entity_type",
+      "name": "type",
       "entityType": "columns",
       "table": "heartbeats"
     },
@@ -44,17 +46,17 @@
       "autoincrement": false,
       "default": null,
       "generated": null,
-      "name": "timestamp",
+      "name": "time",
       "entityType": "columns",
       "table": "heartbeats"
     },
     {
-      "type": "integer",
+      "type": "text",
       "notNull": false,
       "autoincrement": false,
       "default": null,
       "generated": null,
-      "name": "is_write",
+      "name": "category",
       "entityType": "columns",
       "table": "heartbeats"
     },
@@ -65,6 +67,16 @@
       "default": null,
       "generated": null,
       "name": "project",
+      "entityType": "columns",
+      "table": "heartbeats"
+    },
+    {
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "name": "project_root_count",
       "entityType": "columns",
       "table": "heartbeats"
     },
@@ -89,12 +101,12 @@
       "table": "heartbeats"
     },
     {
-      "type": "text",
+      "type": "integer",
       "notNull": false,
       "autoincrement": false,
       "default": null,
       "generated": null,
-      "name": "category",
+      "name": "is_write",
       "entityType": "columns",
       "table": "heartbeats"
     },
@@ -129,7 +141,39 @@
       "table": "heartbeats"
     },
     {
-      "columns": ["id"],
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "name": "ai_line_changes",
+      "entityType": "columns",
+      "table": "heartbeats"
+    },
+    {
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "name": "human_line_changes",
+      "entityType": "columns",
+      "table": "heartbeats"
+    },
+    {
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "name": "user_agent",
+      "entityType": "columns",
+      "table": "heartbeats"
+    },
+    {
+      "columns": [
+        "id"
+      ],
       "nameExplicit": false,
       "name": "heartbeats_pk",
       "table": "heartbeats",
@@ -142,7 +186,7 @@
           "isExpression": false
         },
         {
-          "value": "timestamp",
+          "value": "time",
           "isExpression": false
         }
       ],
@@ -156,14 +200,14 @@
     {
       "columns": [
         {
-          "value": "timestamp",
+          "value": "time",
           "isExpression": false
         }
       ],
       "isUnique": false,
       "where": null,
       "origin": "manual",
-      "name": "timestamp_idx",
+      "name": "time_idx",
       "entityType": "indexes",
       "table": "heartbeats"
     }

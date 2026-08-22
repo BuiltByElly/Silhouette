@@ -2,6 +2,7 @@
   "name": "shared",
   "module": "src/main.ts",
   "type": "module",
+  "types": "./src/main.ts",
   "private": true,
   "scripts": {
     "dev": "bun run src/main.ts"

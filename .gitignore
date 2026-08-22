@@ -1,5 +1,6 @@
 notes.txt
 node_modules
-.claude
-.repowise
+.claude/
+.github/
+.repowise/
 .mcp.json

@@ -1,4 +1,4 @@
-# lib
+# shared
 
 To install dependencies:
 

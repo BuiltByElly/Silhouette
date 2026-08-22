@@ -1,4 +1,4 @@
-// packages/lib/src/log.ts
+// packages/shared/src/log.ts
 import * as fs from "node:fs";
 import { LOG_PATH } from "./path";
 import type { LogState, PkgName } from "./types/log.types";
@@ -12,9 +12,11 @@ const debug = false; // Set to false to test the file-writing logic
 
 export function logger(type: LogState, pkgName: PkgName, message: string) {
   if (debug) {
-    console.log(`[${type}](${pkgName}): ${message}`);
+    console.log(
+      `[${type}](${pkgName}) {${new Date().toLocaleString()}}: ${message}`,
+    );
   } else {
-    const logMessage = `[${type}](${pkgName}): ${message}\n`;
+    const logMessage = `[${type}](${pkgName}) {${new Date().toLocaleString()}}: ${message}\n`;
     try {
       // Fix: Use appendFileSync for pure synchronous logging in Bun
       fs.appendFileSync(LOG_PATH, logMessage);

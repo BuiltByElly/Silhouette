@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "bun --watch src/main.ts"
   },
+  "bin": {
+     "silhouette": "./src/main.ts"
+   },
   "dependencies": {
     "shared": "workspace:*"
   },
