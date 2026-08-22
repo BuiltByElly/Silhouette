@@ -2,6 +2,8 @@ import { parseArgs } from "util";
 import {
   createSilhouetteHomeDir,
   heartbeats,
+  logger,
+  readConfig,
   setupDatabase,
   writeHeartbeatsToDb,
 } from "shared";
@@ -14,14 +16,16 @@ if (command === "start") {
   /* ... */
   await createSilhouetteHomeDir();
   const db = setupDatabase();
-
+  const cfg = await readConfig();
   const server = Bun.serve({
-    port: 4173,
+    port: cfg.settings.port,
     routes: {
       "/api/v1/users/current/heartbeats.bulk": {
         POST: async (req) => {
           const body = (await req.json()) as Heartbeat[];
-          console.log("WAKATIME", body);
+
+          if (cfg.settings.debug)
+            logger("DEBUG", "Stethoscope", JSON.stringify(body));
 
           //Persist to db
           await writeHeartbeatsToDb(db, heartbeats, body);

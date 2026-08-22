@@ -8,8 +8,9 @@ import * as ini from "ini";
 
 const DEFAULT_CONFIG: SilhouetteConfig = {
   settings: {
-    port: 4110,
+    port: 4173,
     theme: "dark-lime",
+    debug: false,
   },
 };
 export async function readConfig() {
